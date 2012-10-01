@@ -254,13 +254,15 @@ jQuery.extend(Messi, {
       
   },
   
-  load: function(url, options) {
+  load: function(url, options, postParam) {
       
     options = jQuery.extend(options || {}, {show: true, unload: true});
     
     var request = {
       url: url,
+      data: postParam,
       dataType: 'html',
+      type: 'POST',
       cache: false,
       error: function (request, status, error) {
         console.log(request.responseText);
